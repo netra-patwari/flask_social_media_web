@@ -1,0 +1,71 @@
+{% extends "layout/b.html" %}
+
+{% block content %}
+
+    <div class="text-center max-w mb-2">
+        <h1 id="realname">OTP verification</h1>
+    </div>
+
+<form method="POST" >
+
+    <p>We sent a verification code to your email. Enter the code from the mail in the field below.</p>
+    <span>{{ user.email }}</span>
+
+
+      <form id="twoStepsForm" action="{{ url_for('verify_email' , verification_hash=user.verification_hash) }}" method="POST">
+
+        <div class="mb-3">
+            <div class="auth-input-wrapper d-flex align-items-center justify-content-sm-between numeral-mask-wrapper">
+                <input type="hidden" name="_method" value="PATCH">
+                <input type="text" name="otp" class="form-control h-px-50 text-center numeral-mask h-px-50 mx-1 my-2" maxlength="6" autofocus />
+            </div>
+        </div>
+        <button type="submit" class="btn btn-primary d-grid w-100 mb-3">Verify my account</button>
+      </form>
+
+      <form action="{{ url_for('resend' , verification_hash=user.verification_hash ) }}" method="POST">
+          <div class="text-center">
+            Didn't get the code?
+            <a><button type="submit" class="hover:underline text-gray-500"> Resend </button></a><span id="timer" class="orange"> </span>
+            
+          </div>
+        </form>
+
+
+    </div>
+
+
+
+</form>
+
+  <script>
+    const endTime = new Date("{{ otp_expiration_time }}");
+
+    const otpLive = (start, end) => {
+        const milli = end.getTime() - start.getTime();
+        const sec = milli / 1000;
+        return sec <= 90;
+    }
+
+    const updateTimer = () => {
+        const now = new Date();
+        const timeDifference = Math.round((endTime - now) / 1000);
+
+        if (otpLive(now, endTime) && timeDifference >= 0) {
+            const minutes = Math.floor(timeDifference / 60);
+            const seconds = timeDifference % 60;
+
+            document.getElementById("timer").textContent =
+                minutes.toString() + ":" + (seconds < 10 ? "0" : "") + String(seconds);
+
+            setTimeout(updateTimer, 1000);
+        } else {
+            document.getElementById("timer").textContent = "0:00";
+        }
+    };
+
+    updateTimer();
+</script>
+
+
+{% endblock content %}

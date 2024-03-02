@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block layout %}
+
+{% include 'includes/header.html' %}
+{% include 'includes/hero.html' %}
+
+<content x-data="{ mobileSidebarOpen: false }" class="grid max-w-7xl mx-auto my-6 px-6">
+
+    <main class="col-span-full md:col-span-2 md:mr-[5%] lg:mx-[10%] order-2 md:order-1">
+        {% block content %}
+        
+        {% endblock content %}
+    </main>
+</content>
+
+{% endblock layout %}

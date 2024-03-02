@@ -1,0 +1,12 @@
+<hero class="grid bg-gray-700 text-white text-center bg-cover z-10 relative bg-[url('https://i.pinimg.com/564x/fd/5a/c8/fd5ac82a35b5e721421a1dde16f8ac3d.jpg')]">
+    <div class="col-start-1 row-start-1 bg-gray-800 bg-opacity-40 w-full h-full"></div>
+    <div class="col-start-1 row-start-1 py-24 px-10 ">
+        <h1 class="font1 text-6xl title-fadein">Share the aesthetic vibes: Pinterest pics & killer captions</h1>
+        <p class="text-lg font-bold mb-5">Slay the Feed with These Pics & Capts ✨</p>
+        {% if user.otp_verified == 'true' %}
+        <a class="button" href="{{url_for('create_post')}}">Create Post</a>
+        {% else %} 
+        <a class="button" href="{{ url_for('signup') }}">Get Started</a>
+        {% endif %}
+    </div>
+</hero>

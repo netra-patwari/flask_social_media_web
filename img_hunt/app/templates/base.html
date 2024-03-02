@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" layout="IE=edge">
+    <meta name="viewport" layout="width=device-width, initial-scale=1.0">
+    <title>Awesome</title>
+    <link rel="shortcut icon" type="image/png" href="https://img.icons8.com/small/64/000000/fire-heart.png"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style type="text/tailwindcss">
+        [x-cloak] { 
+            display: none !important; 
+        }
+        :root {
+            --primary: #2E2F3A; /* Adjusted primary color */
+        --primary-hover: #1d1d1d; /* Adjusted primary hover color */
+        --black: #000000; /* Pitch black */
+        --font1: 'Lobster', sans-serif;
+        }
+        h1 {
+            @apply text-4xl font-bold mb-4
+        }
+        h2 {
+            @apply text-2xl font-bold mb-3
+        }
+        h3 {
+            @apply text-lg font-bold 
+        }
+        .font1 {
+            font-family: var(--font1);
+        }
+        .button, button, [type='submit'], [type='button'] {
+            display: inline-flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-layout: center;
+            flex-shrink: 0;
+            text-align: center;
+            border-radius: 0.5rem;
+            cursor: pointer;
+            padding: 0 1rem;
+            min-height: 3.3rem;
+            font-weight: 600;
+            box-shadow: 0 4px 3px rgba(0, 0, 0, 0.1);
+            transition-property: transform;
+            transition-duration: .2s;
+            color: white;
+            background-color: var(--primary);
+            width: fit-layout;
+        }
+        .button:hover, button:hover, [type='submit']:hover, [type='button']:hover {
+            background-color: var(--primary-hover);
+        }
+        .button:active, button:active, [type='submit']:active, [type='button']:active {
+            transform: scale(0.95);
+        }
+        .secondaryAction {
+            background-color: white;
+            color: rgba(0, 0, 0, 0.6);
+            border: 1px solid rgba(0, 0, 0, 0.3);
+        }
+        .secondaryAction:hover, .button.secondaryAction:hover {
+            background-color: white !important;
+        }
+        .navitems>li>a {
+            @apply flex items-center gap-2 h-12 px-4 rounded-lg;
+        }
+
+        .navitems>li>a:hover {
+            background-color:#1a1a1a;
+        }
+        .card {
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+            position: relative;
+            border-radius: 1rem;
+            box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1);
+            margin-bottom: 2rem;
+            background-color: #141414;
+            padding-bottom: 1rem;
+            width: 100%;
+        }
+        .hoverlist>* {
+            @apply rounded-md transition duration-150;
+        }
+        .hoverlist>*:hover {
+            background-color:#1a1a1a;
+        }
+        .hoverlist>*>a {
+            @apply flex items-center p-2;
+        }
+        .hoverlist>li>a:hover {
+            background-color:#1a1a1a;
+        }
+
+
+        .highlight {
+            background-color:#1a1a1a;
+        }
+        .titleBlip {
+            animation: 1s fadeIn;
+        }
+        @keyframes fadeIn {
+            0% { opacity: 0; }
+            10% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+        html, body {
+            color: white;
+            background-color:var(--black);
+            margin: 0;
+            min-height: 100%;
+        }
+        p {
+            margin-bottom: 1rem;
+        }
+        form p {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+        label, input {
+          display: inline-block;
+        }
+        form p label {
+            width: 7rem;
+            }
+        label {
+            margin: 6px 0 3px;
+        }
+        input, textarea {
+            width: 100%;
+        }
+        input[type="file"], select {
+            background-color: #1a1a1a;
+            padding-left: 0;
+        }
+        label[for="id_remember"] {
+            width: auto;
+            margin-right: 0.5rem;
+        }
+        input[name="remember"] {
+            width: auto;
+        }
+        .btn-red {
+            @apply inline-flex;
+            background-color:#1a1a1a;
+        }
+        .btn-red:hover {
+            background-color:#1a1a1a;
+        }
+        .login .secondaryAction {
+            box-shadow: none;
+            display: block;
+            padding: none;
+            padding: 0px;
+            border: none;
+            font-size: smaller;
+            font-weight: normal;
+            min-height: auto;
+            margin-bottom: 1.5rem;
+        }
+        .login .secondaryAction:hover {
+            @apply text-gray-900 underline bg-white;
+        }
+        #id_tags {
+            margin-bottom: 1rem;
+        }
+        #id_tags div {
+            display: inline-block;
+            margin-right: 0.5rem;  
+        }
+        #id_tags div label {
+            border-radius: 9999px;
+            padding: 0.5rem 1rem;
+            border: 1px solid rgb(229 231 235);
+            width: auto;
+            cursor: pointer;
+            user-select: none;
+        }
+        #id_tags input {
+            display: none;
+        }
+        #id_tags label:has(input:checked) {
+            background-color: var(--black);
+            color: white;
+            border: 1px solid var(--black);
+        }
+        .textarea, textarea {
+            margin-bottom: 1rem;
+        }
+        .textarea, textarea, input {
+            border-radius: 0.5rem;
+            padding: 1rem 1.2rem;
+            background-color: black;
+        }
+        .errorlist li {
+            color: rgb(253, 88, 49);
+            padding: 0.5rem;
+            padding-left: 1rem;
+            border-left: 5px solid rgb(253, 88, 49);
+            margin-bottom: 1rem;
+        }
+        .tab {
+            cursor: pointer;
+            padding: 0.75rem 1rem;
+            color: rgb(0,0,0,0.6); 
+            background-color: rgb(0,0,0,0.05);
+            border-radius: 0.75rem;
+            text-align: center;
+            display: flex;
+            align-items: center;
+        }
+        .tab:hover {
+            background-color: rgb(0,0,0,0.1);
+        }
+        .tab.selected {
+            color: white;
+            background-color: var(--black);
+        }
+        .replyform {
+            border-top: none;
+        }
+        .replyform textarea, .replyform input {
+            padding: 0.75rem 1rem;
+            font-size: 1rem;
+            margin-bottom: 0px;
+            height: 3.2rem;
+        }
+        .replyform button {
+            margin-left: 0.5rem;
+            min-height: unset;
+        }
+        .fade-me-in.htmx-settling{
+            opacity: 0;
+        }
+        .fade-me-in {
+            opacity: 1;
+            transition: opacity 1s ease-out;
+        }
+        #profile article figure img {
+            @apply aspect-[3/2] object-cover;
+        }
+        #profile article p {
+            @apply truncate leading-normal;
+        }
+    </style>
+</head>
+<body class="">
+
+    {% with messages = get_flashed_messages(with_categories=true) %}
+    {% if messages %}
+    <div x-data="{ showMessage: true }" x-cloak @click.away="showMessage = false" class="absolute mx-auto left-0 right-0 mt-2 max-w-xl z-50" x-show="showMessage" x-init="setTimeout(() => showMessage = false, 5000)">
+        {% for category, message in messages %}
+        <div class="flex items-center {% if category == 'error' %}bg-red-500{% else %}bg-amber-300{% endif %} text-white p-3 rounded-lg" role="alert">
+            <!-- SVG icons for different categories -->
+            {% if category == 'success' %}
+            <svg xmlns="http://www.w3.org/2000/svg" class="stroke-current shrink-0 h-6 w-6" fill="none" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+            {% elif category == 'info' %}
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" class="stroke-current shrink-0 w-6 h-6"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+            {% elif category == 'warning' %}
+            <svg xmlns="http://www.w3.org/2000/svg" class="stroke-current shrink-0 h-6 w-6" fill="none" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" /></svg>
+            {% elif category == 'error' %}
+            <svg xmlns="http://www.w3.org/2000/svg" class="stroke-current shrink-0 h-6 w-6" fill="none" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+            {% endif %}
+            <!-- Message content -->
+            <div class="ml-2">
+                <div class="text-lg">{{ message }}</div>
+            </div>
+            <!-- Close button -->
+            <button @click="showMessage = false" class="ml-auto cursor-pointer">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="white" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24" stroke="currentColor" class="w-6 h-6">
+                    <path d="M6 18L18 6M6 6l12 12"></path>
+                </svg>
+            </button>
+        </div>
+        {% endfor %}
+    </div>
+    {% endif %}
+    {% endwith %}
+    
+
+
+    {% block layout %}
+
+{% endblock layout %}
+{% block script %}
+
+    {% endblock script %}
+
+</body>
+</html>

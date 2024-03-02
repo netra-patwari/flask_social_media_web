@@ -1,0 +1,16 @@
+{% extends "layout/b.html" %} 
+
+{% block content %}
+
+<div class="text-center max-w mb-2">
+  <h1 id="realname">Verify your email ✉️</h1>
+</div>
+
+<p class="text-start mb-4">
+  Account activation link sent to your email address: {{ '*****' + user.email[5:] }}
+
+  Please follow the link inside to
+  continue.
+</p>
+
+{% endblock content %}

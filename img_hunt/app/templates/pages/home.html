@@ -1,0 +1,40 @@
+{% extends "layout/a.html" %}
+
+{% block content %}
+{% for post, name, username , avatar in posts %}
+<article class="card">
+    <figure>
+        <a href=""><img class="w-full" src="{{ post.url }}"></a>
+    </figure>
+    <div class="p-4 pb-2">
+
+        <div class="grid place-content-center">
+            <p class="text-5xl mb-5 px-4 font1">{{ post.caption }}</p>
+        <div class="w-16 bg-emerald-300 p-0.5 mb-5 mt-3 place-self-center"></div>
+        </div>
+        
+        <a class="flex justify-center items-center gap-1 mb-4" href="">
+            <img class="w-8 h-8 object-cover rounded-full" src="{{ avatar }}">
+            <span class="font-bold hover:underline">{{ name }}</span>
+            <span class="text-sm text-gray-400">@{{ username }}</span>
+        </a>
+
+        <div class="flex items-center justify-between text-sm px-2">
+
+            <a class="font-bold hover:bg-gray-800 hover:rounded-full hover:px-4 hover:py-3 hover:-ml-2 hover:text-white transition-all">
+                
+                Add comment
+                
+            </a>
+            <div class="flex items-center gap-4 [&>a:hover]:underline">
+                <a href="">Edit</a>
+                <a href="">Delete</a>
+            </div>
+        </div>
+    
+        
+            
+</div>
+</article>
+{% endfor %}
+{% endblock content %}

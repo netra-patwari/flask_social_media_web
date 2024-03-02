@@ -1,0 +1,37 @@
+{% extends "layout/c.html" %} 
+
+{% block content %}
+
+<h1 class="text-center" >Create Post</h1>
+<div class="card !p-8">
+
+    <div class="flex items-center mb-6 justify-center gap-1">
+        <img class="h-5 object-cover mr-1" src="https://img.icons8.com/small/96/333333/search--v1.png"/>
+        <a href="https://in.pinterest.com/" target="_blank" class="hover:underline text-gray-500">Find an image on Pintrest</a>
+    </div>
+
+    <div class="flex items-center mb-6">
+    </div>
+
+    <form method='POST' action="{{ url_for('create_post' , user=user) }}" >
+        <p>
+            <label>Url:</label>
+            <input name='url' required="" >
+        </p>
+        <p>
+            <label for="id_title">Caption:</label>
+            <textarea name="caption" cols="40" rows="3" placeholder="Add a caption ..." class="font1 text-4xl" required="" id="id_body"></textarea>
+        </p>
+<div class="flex justify-center mt-1">
+    <div>
+        <input type="submit" class="button" value='Submit Post'>
+    </div>
+    <a class="button secondaryAction ml-4" href="">Cancel</a>
+</div>
+
+    </form>
+</div>
+
+{% endblock content %}
+
+

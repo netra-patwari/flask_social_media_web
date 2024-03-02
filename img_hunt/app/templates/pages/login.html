@@ -1,0 +1,83 @@
+{% extends "layout/b.html" %}
+
+{% block content %}
+
+<div class="text-center max-w mb-2">
+    <h1 id="realname">Login</h1>
+</div>
+
+<form action="{{ url_for('login') }}" method="POST" id="loginForm">
+
+    <p>
+        <label for="identifier">Username or Email:</label>
+        <input type="text" name="identifier" placeholder="" maxlength="254" required="" id="username">
+    </p>
+
+    <p>
+        <label for="password">Password:</label>
+        <input type="password" name="password" placeholder="******" maxlength="254" required="" id="password">
+    </p>
+
+    <div class="flex justify-center items-center">
+        <button type="submit" id="signupButton">Login</button>
+    </div>
+
+</form>
+
+<a class="mt-12 hover:underline text-gray-500 text-center" href="{{ url_for('signup') }}">Don't have an account? Sign Up</a>
+
+
+{% endblock content %}
+
+
+{% block script %}
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+      const usernameInput = document.getElementById("username");
+      const emailInput = document.getElementById("id_email");
+      const passwordInput = document.getElementById("password");
+      const signupButton = document.getElementById("signupButton");
+
+      // Function to validate inputs and update styling
+      function validateInputs() {
+          let isValid = true;
+
+          // Reset border colors
+          usernameInput.style.borderColor = "";
+          emailInput.style.borderColor = "";
+          passwordInput.style.borderColor = "";
+
+          // Validate username
+          if (usernameInput.value.trim() === "") {
+              usernameInput.style.borderColor = "red";
+              isValid = false;
+          }
+
+          // Validate email (basic validation)
+          if (!emailInput.value.trim().includes("@")) {
+              emailInput.style.borderColor = "red";
+              isValid = false;
+          }
+
+          // Validate password length
+          if (passwordInput.value.length < 8) {
+              passwordInput.style.borderColor = "red";
+              isValid = false;
+          }
+
+          // Disable/enable signup button based on validation result
+          signupButton.disabled = !isValid;
+      }
+
+      // Add event listeners to inputs for validation
+      usernameInput.addEventListener("input", validateInputs);
+      emailInput.addEventListener("input", validateInputs);
+      passwordInput.addEventListener("input", validateInputs);
+
+      // Initial validation
+      validateInputs();
+  });
+</script>
+
+
+{% endblock script %}

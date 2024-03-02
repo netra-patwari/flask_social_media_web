@@ -1,0 +1,55 @@
+{% extends "layout/b.html" %} {% block content %}
+
+<div class="text-center max-w mb-2">
+  <h1 id="realname">Signup</h1>
+</div>
+
+<form action="{{ url_for('signup') }}" method="POST" id="signupForm">
+  <p>
+    <label for="username">Username:</label>
+    <input
+      type="text"
+      name="username"
+      placeholder=""
+      maxlength="254"
+      required=""
+      id="username"
+    />
+  </p>
+
+  <p>
+    <label for="id_email">Email:</label>
+    <input
+      type="email"
+      name="email"
+      placeholder="bart@email.com"
+      maxlength="254"
+      required=""
+      id="id_email"
+    />
+  </p>
+
+  <p>
+    <label for="password">Password:</label>
+    <input
+      type="password"
+      name="password"
+      placeholder="******"
+      maxlength="254"
+      required=""
+      id="password"
+    />
+  </p>
+
+  <div class="flex justify-center items-center">
+    <button type="submit" id="signupButton">Signup</button>
+  </div>
+</form>
+
+<a
+  class="mt-12 hover:underline text-gray-500 text-center"
+  href="{{ url_for('login') }}"
+  >Already have an account? Login</a
+>
+
+{% endblock content %}
