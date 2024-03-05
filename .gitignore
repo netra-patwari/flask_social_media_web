@@ -1,0 +1,81 @@
+# Ignore virtual environment directory
+venv/
+
+# Ignore cache and compiled files
+*.pyc
+__pycache__/
+
+# Ignore database files
+*.sqlite3
+
+# Ignore environment configuration files
+.env
+
+# Ignore log files
+*.log
+
+# Ignore IDE and editor-specific files
+.idea/
+.vscode/
+
+# Ignore compiled Python files
+*.pyc
+
+# Ignore package directory
+__pycache__/
+
+# Ignore compiled Python files
+*.pyc
+
+# Ignore database migrations
+migrations/
+
+# Ignore local development settings
+local_settings.py
+
+# Ignore any local configuration file
+config.ini
+
+# Ignore any backup files
+*~
+
+# Ignore any archive files
+*.zip
+*.gz
+
+# Ignore cache files
+.cache/
+
+# Ignore any compiled Python bytecode
+*.pyc
+
+# Ignore any Python environment
+.env/
+env/
+
+# Ignore any compiled Python files
+*.pyc
+
+# Ignore any Python bytecode files
+*.pyo
+*.pyc
+*.pyd
+
+# Ignore any Python cache directories
+__pycache__/
+
+# Ignore any generated files
+*.log
+*.pot
+*.pyc
+*.pyo
+*.swp
+*.sql
+*.sqlite
+*.tmp
+
+# Ignore any local development files
+.env.local
+
+# Ignore any pipenv virtual environment
+Pipfile.lock

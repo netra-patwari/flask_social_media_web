@@ -16,3 +16,6 @@ from app.routes.create_post import create_post
 from app.routes.profile import profile
 from app.routes.profile_edit import profile_edit
 from app.routes.delete import delete
+from app.routes.delete_post import delete_post
+from app.routes.edit_post import edit_post
+from app.routes.logout import logout

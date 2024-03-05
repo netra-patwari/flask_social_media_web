@@ -35,18 +35,20 @@
                     <ul class="hoverlist [&>li>a]:justify-end">
                         <li><a href="{{url_for('profile')}}">My Profile</a></li>
                         <li><a href="{{url_for('profile_edit')}}">Edit Profile</a></li>
-                        <li><a href="">Log Out</a></li>
+                        
+                        <li>
+                            <form action="{{ url_for('logout') }}" method="POST">
+                            <button type='submit' href="">Log Out</button>    
+                            </form>
+                            
+                        </li>
                     </ul>
                 </div>
             </li>  
             {% else %}       
             <li><a href="{{url_for('signup')}}">Sign Up</a></li>
             <li><a href="{{url_for('login')}}">Login</a></li>   
-
-
             {% endif %}
-                
-
         </ul>
     </nav>
 </header>
