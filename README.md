@@ -10,7 +10,7 @@ IMG-HUNT is a social media platform where users can upload image links from Pint
 - [Built With](#built-with)
   - [Backend](#backend)
   - [Frontend](#frontend)
-- [Credits](#credits)
+  - [Credits](#credits)
 - [Contact](#contact)
 - [Roadmap](#roadmap)
 - [Acknowledgments](#acknowledgments)
@@ -31,14 +31,13 @@ IMG-HUNT allows users to curate their aesthetic preferences by sharing images fr
 - Daisy UI
 - Alpine JS
 
-## Credits
+#### Credits
 
 - [Andyjud's Awesome Repository](https://github.com/andyjud/awesome) for frontend components.
-- [Best-README-Template](https://github.com/othneildrew/Best-README-Template) for inspiration and structure.
 
 ## Contact
 
-For any inquiries or feedback, please contact us at [email@example.com](mailto:email@example.com).
+For any inquiries or feedback, please contact us at [patwarinetra@gmail.com](mailto:patwarinetra@gmail.com).
 
 ## Roadmap
 
@@ -50,8 +49,8 @@ For any inquiries or feedback, please contact us at [email@example.com](mailto:e
 - [x] Create Post
 - [x] Edit Post
 - [x] Delete Post
-- [ ] Likes (unchecked)
-- [ ] Comments (unchecked)
+- [ ] Likes 
+- [ ] Comments
 
 ## Acknowledgments
 
